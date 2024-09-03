@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="agribot_describtion">
+
+<!--gazebo colors-->
+    <gazebo reference="Agribot_base_link">
+        <material>Gazebo/Silver</material>
+    </gazebo>
+    <gazebo reference="agribot_right_rear_Link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+        <gazebo reference="agribot_left_rear_Link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+        <gazebo reference="agribot_right_front_Link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+        <gazebo reference="agribot_left_front_Link">
+        <material>Gazebo/Red</material>
+    </gazebo>
+  <!--/dummy joint/-->
+  <joint name="Agribot_base_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.45" rpy="0.0 0.0 0.0"/>
+    <parent link="base_footprint"/>
+    <child link="Agribot_base_link"/>
+  </joint>
+  <!--dummy link-->
+  <link name="base_footprint"/>
+  <link name="Agribot_base_link">
+    <inertial>
+      <origin xyz="-0.00172028527131218 2.15063398465443E-05 0.0648243841049334" rpy="0 0 0" />
+      <mass value="34.053104349233" />
+      <inertia ixx="0.398698477798669" ixy="1.14030691802359E-05" ixz="1.59657469624218E-08" iyy="0.199647033956459" iyz="-7.80794841072498E-10" izz="0.452444337464452" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://agribot_describtion/meshes/Agribot_base_link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.529411764705882 0.549019607843137 0.549019607843137 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://agribot_describtion/meshes/Agribot_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="agribot_right_rear_Link">
+    <inertial>
+      <origin xyz="1.7532E-06 2.4712E-06 -0.00011975" rpy="0 0 0" />
+      <mass value="2.0263" />
+      <inertia ixx="0.028944" ixy="1.8507E-07" ixz="4.3157E-08" iyy="0.028944" iyz="2.9252E-08" izz="0.057268" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://agribot_describtion/meshes/agribot_right_rear_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://agribot_describtion/meshes/agribot_right_rear_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="agribot_right_rear_joint" type="continuous">
+    <origin xyz="-0.44777 -0.37497 -0.27235" rpy="1.5708 0 0" />
+    <parent link="Agribot_base_link" />
+    <child link="agribot_right_rear_Link" />
+    <axis xyz="0 0 -1" />
+  </joint>
+  <link name="agribot_left_rear_Link">
+    <inertial>
+      <origin xyz="2.8502E-06 1.0273E-06 -0.00011975" rpy="0 0 0" />
+      <mass value="2.0263" />
+      <inertia ixx="0.028945" ixy="1.2849E-07" ixz="5.2131E-08" iyy="0.028944" iyz="-6.5352E-10" izz="0.057268" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://agribot_describtion/meshes/agribot_left_rear_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://agribot_describtion/meshes/agribot_left_rear_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="agribot_left_rear_joint" type="continuous">
+    <origin xyz="-0.44777 0.37503 -0.27235" rpy="1.5708 0 0" />
+    <parent link="Agribot_base_link" />
+    <child link="agribot_left_rear_Link" />
+    <axis xyz="0 0 -1" />
+  </joint>
+  <link name="agribot_right_front_Link">
+    <inertial>
+      <origin xyz="8.8543E-07 2.8971E-06 -0.00011975" rpy="0 0 0" />
+      <mass value="2.0263" />
+      <inertia ixx="0.028944" ixy="1.0742E-07" ixz="3.1759E-08" iyy="0.028945" iyz="4.1353E-08" izz="0.057268" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://agribot_describtion/meshes/agribot_right_front_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://agribot_describtion/meshes/agribot_right_front_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="agribot_right_front_joint" type="continuous">
+    <origin xyz="0.46223 -0.37497 -0.27235" rpy="1.5708 0 0" />
+    <parent link="Agribot_base_link" />
+    <child link="agribot_right_front_Link" />
+    <axis xyz="0 0 -1" />
+  </joint>
+  <link name="agribot_left_front_Link">
+    <inertial>
+      <origin xyz="8.8543E-07 2.8971E-06 -0.00011975" rpy="0 0 0" />
+      <mass value="2.0263" />
+      <inertia ixx="0.028944" ixy="1.0742E-07" ixz="3.1759E-08" iyy="0.028945" iyz="4.1353E-08" izz="0.057268" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://agribot_describtion/meshes/agribot_left_front_Link.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://agribot_describtion/meshes/agribot_left_front_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="agribot_left_front_joint" type="continuous">
+    <origin xyz="0.46223 0.37503 -0.27235" rpy="1.5708 0 0" />
+    <parent link="Agribot_base_link" />
+    <child link="agribot_left_front_Link" />
+    <axis xyz="0 0 -1" />
+  </joint>
+  <!--diff drive for rear whheels-->
+  <gazebo>
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <updateRate>40</updateRate>
+      <leftJoint>agribot_left_front_joint</leftJoint>
+      <rightJoint>agribot_right_front_joint</rightJoint>
+      <wheelSeparation>0.9</wheelSeparation>
+      <wheelDiameter>0.35</wheelDiameter>
+      <wheelAcceleration>1.0</wheelAcceleration>
+      <wheelTorque>78</wheelTorque>
+      <publishOdomTF>true</publishOdomTF>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_footprint</robotBaseFrame>
+      <odometrySource>1</odometrySource>
+      <publishWheelTF>false</publishWheelTF>
+      <publishOdom>true</publishOdom>
+      <publishWheelJointState>true</publishWheelJointState>
+      <legacyMode>false</legacyMode>
+    </plugin> 
+
+    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <updateRate>40</updateRate>
+      <leftJoint>agribot_left_rear_joint</leftJoint>
+      <rightJoint>agribot_right_rear_joint</rightJoint>
+      <wheelSeparation>0.9</wheelSeparation>
+      <wheelDiameter>0.35</wheelDiameter>
+      <wheelAcceleration>1.0</wheelAcceleration>
+      <wheelTorque>78</wheelTorque>
+      <publishOdomTF>true</publishOdomTF>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <robotBaseFrame>base_footprint</robotBaseFrame>
+      <odometrySource>1</odometrySource>
+      <publishWheelTF>false</publishWheelTF>
+      <publishOdom>true</publishOdom>
+      <publishWheelJointState>true</publishWheelJointState>
+      <legacyMode>false</legacyMode>
+    </plugin>
+  </gazebo>
+</robot>

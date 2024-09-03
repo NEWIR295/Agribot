@@ -1,0 +1,23 @@
+<?xml version = "1.0"?>
+<launch>
+    <!--rviz file name-->
+    <arg name="config" default="agribot"/>
+    <param name="robot_description" textfile="$(find agribot_describtion)/urdf/agribot_describtion.urdf"/>    
+
+    <!--launch gazebo config-->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+		<!-- <arg name="world_name" value="$(find agribot_describtion)/worlds/myworld"/> -->
+		<arg name="paused" value="false"/>
+		<arg name="use_sim_time" value="true"/>
+		<arg name="gui" value="true"/>
+		<arg name="recording" value="false"/>
+		<arg name="debug" value="false"/>
+ 	</include> 
+    <!--my model spawn in gazebo-->
+ 	<node name="robot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model agribot_describtion -x 0 -y 0 -z 0" />
+    <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/> -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <!--launch rviz -->
+    <node pkg = "rviz" name = "rviz" type="rviz" required="true" args="-d $(find agribot_describtion)/rviz/$(arg config).rviz"/>
+
+</launch>

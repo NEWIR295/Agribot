@@ -1,0 +1,14 @@
+<?xml version = "1.0"?>
+<launch>
+    <!-- Define robot parameters all units are in m, m/s -->
+    <param name="max_vel" type="double" value="250"/>
+    <!-- Include your node launch -->
+    <node pkg="agribot_ctrl" type="getPid" name="getPid" output="screen"/>
+    <node pkg="agribot_ctrl" type="motor_reconfigure" name="motor_reconfigure" output="screen"/>
+    <node pkg="rqt_reconfigure" type="rqt_reconfigure" name="rqt_reconfigure" output="screen"/>
+    <!-- <node name="arduino_node2" pkg="rosserial_python" type="serial_node.py" output="screen">
+      <param name="port" value="/dev/ttyACM0"/>
+      <param name="baud" value="38400"/>
+    </node> -->
+    <node pkg="agribot_ctrl" type="pid_plot.py" name="pid_plot" output="screen"/>
+</launch>

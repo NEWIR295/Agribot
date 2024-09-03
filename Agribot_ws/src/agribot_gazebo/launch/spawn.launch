@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+    <!--rviz file name-->
+  <arg name="config" default="agribot"/>
+  <param name="robot_description" textfile="$(find agribot_describtion)/urdf/agribot_describtion.urdf"/>    
+
+    <node name="robot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" args="-urdf -param robot_description -model agribot_describtion -x 0 -y 0 -z 0" />
+    
+    <!-- <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"/> -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+    <node pkg = "rviz" name = "rviz" type="rviz" required="true" args="-d $(find agribot_describtion)/rviz/$(arg config).rviz"/>
+
+</launch>
