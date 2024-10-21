@@ -43,6 +43,7 @@ This project was developed as part of my graduation project at **Cairo Universit
 ### Achievements
 - Represented **Cairo University** at the **ITC-EGYPT ADC 2024**, hosted by the **Egyptian Military Academy**.
 - Gained recognition from **Al-Ahram Establishment**, **Middle East News Agency (MENA)**, and **UNESCO's Future Builders Club** for the project.
+- Choosen as one of top 5 projects in **Made In Egypt (MIE)** competition in autonomous robots category. 
 - Received an **A grade** for the project.
 
 ### Special Thanks
